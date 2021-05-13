@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <title>팝빌 SDK Express Example. </title>
+</head>
+<body>
+<div id="content">
+    <p class="heading1">Response</p>
+    <br/>
+    <fieldset class="fieldset1">
+        <legend><%= path %></legend>
+        <% if (result) { %>
+        <% result.forEach(function(list, index){ %>
+        <fieldset class="fieldset2">
+            <legend> 카카오톡 채널 목록 [ <%= index + 1 %> / <%= result.length %> ]</legend>
+            <ul>
+                <li> plusFriendID (카카오톡 채널 아이디) : <%= list.plusFriendID %></li>
+                <li> plusFriendName (카카오톡 채널 이름) : <%= list.plusFriendName %></li>
+                <li> regDT (등록일시) : <%= list.regDT %></li>
+            </ul>
+        </fieldset>
+        <% });} %>
+    </fieldset>
+</div>
+</body>
+</html>
